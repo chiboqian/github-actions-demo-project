@@ -1,9 +1,9 @@
 name: Test Project
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - chibo
 
 jobs:
   test:
@@ -11,9 +11,6 @@ jobs:
     container:
       image: node:20
     steps:
-      - uses: actions/checkout@v3
-        with:
-          node-version: 20
       - run: npm ci
       - run: npm test
       - run: uname -a
