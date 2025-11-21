@@ -7,7 +7,7 @@ const app = express();
 
 let server: any;
 
-// setup cors. test, new feature 1, feature 2, test commit 2
+// setup cors. test, new feature 1, feature 2, test commit 3
 
 app.use(
   cors({
