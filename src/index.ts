@@ -1,12 +1,13 @@
 import express from "express";
 import cors from "cors";
-import body from "body-parser";
+import bodyParser from "body-parser";
+import recipeRoutes from "./routes/recipes";
 
 const app = express();
 
-let server;
+let server: any;
 
-// setup cors. test, new feature 1
+// setup cors. test, new feature 1, feature 2, test commit 5
 
 app.use(
   cors({
@@ -18,11 +19,11 @@ app.use(
 
 // setup body parser.
 
-app.use(body.json({ limit: "100kb" }));
+app.use(bodyParser.json({ limit: "100kb" }));
 
 // load all routes.
 
-app.use("/recipes", require("./routes/recipes"));
+app.use("/recipes", recipeRoutes);
 
 async function startServer() {
   try {
